@@ -276,9 +276,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1798933406917042708, guid: 0d64b30c2f7eb114ebc7b8386238bbcd, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841967564406013811, guid: 0d64b30c2f7eb114ebc7b8386238bbcd, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6917474411122021371, guid: 0d64b30c2f7eb114ebc7b8386238bbcd, type: 3}
       propertyPath: m_Name
       value: Pipe (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6917474411122021371, guid: 0d64b30c2f7eb114ebc7b8386238bbcd, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -300,7 +312,7 @@ GameObject:
   m_Component:
   - component: {fileID: 402353107}
   - component: {fileID: 402353108}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Camera Confiner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -352,7 +364,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -636,7 +648,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 710606986}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Bullet Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -701,7 +713,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 738951317}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -840,7 +852,7 @@ GameObject:
   - component: {fileID: 2011273891}
   - component: {fileID: 2011273889}
   - component: {fileID: 2011273888}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -857,7 +869,7 @@ GameObject:
   m_Component:
   - component: {fileID: 893427218}
   - component: {fileID: 893427219}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Character Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6805,7 +6817,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1154857000}
   - component: {fileID: 1154857001}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Gun Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6993,10 +7005,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1312036106}
-  - component: {fileID: 1312036110}
   - component: {fileID: 1312036113}
-  - component: {fileID: 1312036112}
   - component: {fileID: 1312036111}
+  - component: {fileID: 1312036112}
+  - component: {fileID: 1312036110}
   m_Layer: 0
   m_Name: Virtual Camera
   m_TagString: Untagged
@@ -7152,7 +7164,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1414218012}
   - component: {fileID: 1414218015}
-  m_Layer: 7
+  - component: {fileID: 1414218016}
+  m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7190,7 +7203,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletSpawnPoint: {fileID: 710606986}
   _bulletPrefab: {fileID: -5611149099131491127, guid: 9dca18bc1fee05d488922a753a58ca8d, type: 3}
-  _gunFireCD: 0.5
+  _gunFireCD: 0.2
+--- !u!95 &1414218016
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414218011}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 785a2f2fd0090cf4e98773d945311976, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1585995695
 GameObject:
   m_ObjectHideFlags: 0
@@ -7715,7 +7750,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2076065032}
   - component: {fileID: 2076065033}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7803,9 +7838,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1798933406917042708, guid: 0d64b30c2f7eb114ebc7b8386238bbcd, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841967564406013811, guid: 0d64b30c2f7eb114ebc7b8386238bbcd, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6917474411122021371, guid: 0d64b30c2f7eb114ebc7b8386238bbcd, type: 3}
       propertyPath: m_Name
       value: Pipe (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6917474411122021371, guid: 0d64b30c2f7eb114ebc7b8386238bbcd, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7869,9 +7916,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1798933406917042708, guid: 0d64b30c2f7eb114ebc7b8386238bbcd, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841967564406013811, guid: 0d64b30c2f7eb114ebc7b8386238bbcd, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6917474411122021371, guid: 0d64b30c2f7eb114ebc7b8386238bbcd, type: 3}
       propertyPath: m_Name
       value: Pipe
+      objectReference: {fileID: 0}
+    - target: {fileID: 6917474411122021371, guid: 0d64b30c2f7eb114ebc7b8386238bbcd, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
