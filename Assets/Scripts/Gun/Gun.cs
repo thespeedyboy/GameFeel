@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.Pool;
+using Unity.Cinemachine;
 
 public class Gun : MonoBehaviour
 {
@@ -18,10 +19,12 @@ public class Gun : MonoBehaviour
     private Vector2 _mousePosition;
     private float _lastFireTime = 0f;
 
+    private CinemachineImpulseSource _impulseSource;
     private Animator _animator;
 
     private void Awake()
     {
+        _impulseSource = GetComponent<CinemachineImpulseSource>();
         _animator = GetComponent<Animator>();
     } 
     private void Start()
@@ -38,6 +41,7 @@ public class Gun : MonoBehaviour
        OnShoot += ShootProjectile;
        OnShoot += ResetLastFireTime;
        OnShoot += FireAnimation;
+       OnShoot += TriggerImpulse;
 
     }
     private void OnDisable()
@@ -45,6 +49,7 @@ public class Gun : MonoBehaviour
         OnShoot -= ShootProjectile;
         OnShoot -= ResetLastFireTime;
         OnShoot -= FireAnimation;
+        OnShoot -= TriggerImpulse;
     }
     public void ReleaseBulletFromPool(Bullet bullet)
     {
@@ -77,6 +82,10 @@ public class Gun : MonoBehaviour
     private void ResetLastFireTime()
     {
         _lastFireTime = Time.time + _gunFireCD;
+    }
+    private void TriggerImpulse()
+    {
+        _impulseSource.GenerateImpulse();
     }
 
     private void ShootProjectile()

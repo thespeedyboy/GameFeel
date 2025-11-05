@@ -26,8 +26,15 @@ public class Bullet : MonoBehaviour
     }
 
    private void OnTriggerEnter2D(Collider2D other) {
-        Health health = other.gameObject.GetComponent<Health>();
-        health?.TakeDamage(_damageAmount);
-       _gun.ReleaseBulletFromPool(this);
+        if(other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Bullet"))
+        {
+          return; 
+        }else if(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Ground"))
+        {
+            Health health = other.gameObject.GetComponent<Health>();
+            health?.TakeDamage(_damageAmount);
+            _gun.ReleaseBulletFromPool(this);
+        }
+       
     }
 }
