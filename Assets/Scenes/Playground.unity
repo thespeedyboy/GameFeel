@@ -719,7 +719,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &738951317
 Transform:
   m_ObjectHideFlags: 0
@@ -7757,7 +7757,10 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  _jumpStrength: 10
+  _jumpStrength: 12
+  _extraGravity: 900
+  _gravityDelay: 0.2
+  _coyoteTime: 0.1
 --- !u!70 &2011273897
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
