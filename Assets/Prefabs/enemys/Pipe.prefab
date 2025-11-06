@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 98
   m_Sprite: {fileID: 519868899, guid: 73ddc00d8ec47db4e8afff42cd48fd89, type: 3}
-  m_Color: {r: 1, g: 0.6392157, b: 0.6392157, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -185,6 +185,7 @@ GameObject:
   - component: {fileID: 86441440655706981}
   - component: {fileID: 722285979208899143}
   - component: {fileID: 2832387929957637719}
+  - component: {fileID: 7665669834965893370}
   m_Layer: 0
   m_Name: Pipe
   m_TagString: Untagged
@@ -269,3 +270,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.6673326, y: 1.3771887}
   m_EdgeRadius: 0
+--- !u!114 &7665669834965893370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6917474411122021371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7a36fa41e0b2645a3d6271d62d46ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colors:
+  - {r: 0.33784264, g: 0.69102097, b: 0.9811321, a: 1}
+  - {r: 1, g: 0.3066038, b: 0.84772474, a: 1}
+  - {r: 0.3726415, g: 1, b: 0.75397706, a: 1}
+  _fillSpriteRender: {fileID: 5968084354001695933}
