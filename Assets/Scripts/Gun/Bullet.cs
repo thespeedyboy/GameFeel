@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [SerializeField] private GameObject _bulletVFX;
     [SerializeField] private float _moveSpeed = 10f;
     [SerializeField] private int _damageAmount = 1;
     [SerializeField] private float _KnockbackTrust = 20;
@@ -27,11 +28,13 @@ public class Bullet : MonoBehaviour
     }
 
    private void OnTriggerEnter2D(Collider2D other) {
-        if(other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Bullet"))
+        
+        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Bullet"))
         {
           return; 
         }else if(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Ground"))
         {
+            Instantiate(_bulletVFX, transform.position, transform.rotation);
             Health health = other.gameObject.GetComponent<Health>();
             health?.TakeDamage(_damageAmount);
 

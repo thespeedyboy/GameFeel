@@ -47,8 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 324da6bc5594197419d59cac9e0abd95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bulletVFX: {fileID: 5797309321410053603, guid: cae7ed105f1d4b14aa7c546d94daf24e, type: 3}
   _moveSpeed: 30
   _damageAmount: 1
+  _KnockbackTrust: 20
 --- !u!212 &3373200371414082845
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -72,7 +74,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 92f5e4c94f1c39642be6209c9c572c7b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
