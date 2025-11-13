@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour, IHitable
+public class Enemy : MonoBehaviour, IDamageAble
 {
     [SerializeField] private float _jumpForce = 7f;
     [SerializeField] private float _jumpInterval = 4f;
@@ -61,6 +61,9 @@ public class Enemy : MonoBehaviour, IHitable
     {
         _health.TakeDamage(damageAmount);
         _knockback.GetKnockedBack(PlayerController.Instance.transform.position, knockBackThrust);
+    }
+    public void TakeHit()
+    {
         _flash.StartFlash();
     }
 }

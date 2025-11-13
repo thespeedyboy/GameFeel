@@ -37,7 +37,10 @@ public class Bullet : MonoBehaviour
             Instantiate(_bulletVFX, transform.position, transform.rotation);
 
             IHitable hitable = other.gameObject.GetComponent<IHitable>();
-            hitable?.TakeDamage(_damageAmount, _KnockbackTrust);
+            hitable?.TakeHit();
+
+            IDamageAble iDamageable = other.gameObject.GetComponent<IDamageAble>();
+            iDamageable?.TakeDamage(_damageAmount, _KnockbackTrust);
 
             _gun.ReleaseBulletFromPool(this);
 

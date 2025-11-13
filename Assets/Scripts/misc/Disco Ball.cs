@@ -8,7 +8,7 @@ public class DiscoBall : MonoBehaviour, IHitable
     {
         _flash = GetComponent<Flash>();
     }
-    public void TakeDamage(int damageAmount, float knockBackThrust)
+    public void TakeHit()
     {
         _flash.StartFlash();
     }
