@@ -1,0 +1,15 @@
+
+using UnityEngine;
+
+public class DiscoBall : MonoBehaviour, IHitable
+{
+    private Flash _flash;
+    private void Awake()
+    {
+        _flash = GetComponent<Flash>();
+    }
+    public void TakeDamage(int damageAmount, float knockBackThrust)
+    {
+        _flash.StartFlash();
+    }
+}

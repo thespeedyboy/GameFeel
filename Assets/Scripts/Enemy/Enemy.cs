@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IHitable
 {
     [SerializeField] private float _jumpForce = 7f;
     [SerializeField] private float _jumpInterval = 4f;
@@ -12,12 +12,18 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D _rigidBody;
     private Movment _movment;
     private ColorChanger _colorChanger;
+    private Knockback _knockback;
+    private Flash _flash;
+    private Health _health;
 
     private void Awake()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
         _movment = GetComponent<Movment>();
         _colorChanger = GetComponent<ColorChanger>();
+        _knockback = GetComponent<Knockback>();
+        _flash = GetComponent<Flash>();
+        _health = GetComponent<Health>();
     }
 
     private void Start() {
@@ -49,5 +55,12 @@ public class Enemy : MonoBehaviour
             Vector2 jumpDirection = new Vector2(randomDirection, 1f).normalized;
             _rigidBody.AddForce(jumpDirection * _jumpForce, ForceMode2D.Impulse);
         }
+    }
+
+    public void TakeDamage(int damageAmount, float knockBackThrust)
+    {
+        _health.TakeDamage(damageAmount);
+        _knockback.GetKnockedBack(PlayerController.Instance.transform.position, knockBackThrust);
+        _flash.StartFlash();
     }
 }

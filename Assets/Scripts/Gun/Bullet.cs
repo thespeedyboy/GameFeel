@@ -35,14 +35,9 @@ public class Bullet : MonoBehaviour
         }else if(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Ground"))
         {
             Instantiate(_bulletVFX, transform.position, transform.rotation);
-            Health health = other.gameObject.GetComponent<Health>();
-            health?.TakeDamage(_damageAmount);
 
-            Knockback knockback = other.gameObject.GetComponent<Knockback>();
-            knockback?.GetKnockedBack(PlayerController.Instance.transform.position, _KnockbackTrust);
-
-            Flash flash = other.gameObject.GetComponent<Flash>();
-            flash?.StartFlash();
+            IHitable hitable = other.gameObject.GetComponent<IHitable>();
+            hitable?.TakeDamage(_damageAmount, _KnockbackTrust);
 
             _gun.ReleaseBulletFromPool(this);
 

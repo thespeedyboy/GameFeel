@@ -41,8 +41,14 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: backGorund
+    uniqueID: 1450630449
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: No light
+    uniqueID: 1928259395
     locked: 0
   - name: vfx
     uniqueID: 1019355607
