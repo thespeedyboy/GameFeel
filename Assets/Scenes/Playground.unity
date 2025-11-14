@@ -939,7 +939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 488990f8d4c1f4a4cb0982d89329d78e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _discoBallPartyTime: 2
+  _discoBallPartyTime: 5
   _globalLight: {fileID: 619394801}
   _globalLightIntensity: 0.2
 --- !u!4 &682189884
